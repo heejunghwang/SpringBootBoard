@@ -3,9 +3,7 @@ package com.example.article.model;
 import lombok.Getter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -21,18 +19,25 @@ public class Article {
     private Long id;
     private String title;
     private String contents;
+    @ManyToOne
+    private Tag tag;
+    @ManyToOne
+    private Comment comment;
     private String author;
+    private String password;
     private Date created;
 
     //기본 생성자 반드시 구현 되어있어야함
     protected Article(){}
 
-    public Article(String title, String contents, String author) {
+    public Article(String title, String contents, String password, String author) {
         this.title = title;
         this.contents = contents;
+        this.password = password;
         this.setAuthor(author);
         this.created = new Date();
     }
+
 
     //Validation check for author
     private void setAuthor(String author) {
@@ -41,5 +46,14 @@ public class Article {
         } else{
             this.author = author;
         }
+    }
+
+    public Article(String title, String contents, Tag tag, Comment comment, String author, String password) {
+        this.title = title;
+        this.contents = contents;
+        this.tag = tag;
+        this.comment = comment;
+        this.author = author;
+        this.password = password;
     }
 }

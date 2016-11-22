@@ -16,7 +16,7 @@ public class ArticleTest {
     @Test(expected = IllegalArgumentException.class)
     public void setAuthorTest(){
         try{
-            new Article("title", "contents", "22222222222222222222222222");
+            new Article("title", "contents", "pw", "22222222222222222222222222");
         }catch(IllegalArgumentException e){
             e.printStackTrace();
             throw new IllegalArgumentException(e);

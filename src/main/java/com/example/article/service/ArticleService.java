@@ -17,13 +17,38 @@ public class ArticleService {
     @Autowired
     ArticleRepository articleRepository;
 
+    /**
+     * 게시물 생성
+     * @param articleDTO
+     * @return
+     */
     public Article create(ArticleDTO articleDTO) {
-        Article article = new Article(articleDTO.getTitle(), articleDTO.getContent(), articleDTO.getAuthor());
+        Article article = new Article(articleDTO.getTitle(), articleDTO.getContent(), articleDTO.getPassword(), articleDTO.getAuthor());
         return articleRepository.save(article);
     }
 
+    /**
+     * 게시물 전체 조회
+     * @return
+     */
     public List<Article> findAll(){
         return articleRepository.findAll();
     }
+
+    /**
+     * 게시물 제목으로 조회
+     * @return
+     */
+    public List<Article> findByTitle(ArticleDTO articleDTO){
+        return articleRepository.findByTitle(articleDTO.getTitle());
+    }
+
+    /**
+     * 게시물 삭제
+     * @param articleDTO
+     */
+//    public void delete(ArticleDTO articleDTO){
+//        articleRepository.delete(articleDTO.getId());
+//    }
 
 }
