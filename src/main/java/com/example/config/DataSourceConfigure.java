@@ -15,7 +15,6 @@ import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.
  * Created by hwang on 2016-11-17.
  */
 
-//Q. Configuration 어노테이션 원리
 @Configuration
 public class DataSourceConfigure {
     @Bean

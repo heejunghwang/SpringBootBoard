@@ -12,10 +12,6 @@ import java.util.Date;
  * Created by hwang on 2016-11-14.
  */
 
-/* Annotation 정리
-* @ToString : let lombok generate an implementation of the toString() method
-* */
-
 @Entity
 @Getter
 @ToString
