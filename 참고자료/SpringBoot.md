@@ -5,6 +5,9 @@ https://www.jetbrains.com/help/idea/2016.2/creating-spring-boot-projects.html
 
 * 로깅 설정
 
+* Annotation
++ Configuration
+
 * 참고 자료
 - Spring Boot Reference
 - Youtube 토비 스프링 강의 : https://www.youtube.com/user/tobyilminlee
