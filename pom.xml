@@ -73,6 +73,12 @@
 			<version>${querydsl.version}</version>
 		</dependency>
 
+		<!--FreeMarker 추가-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
