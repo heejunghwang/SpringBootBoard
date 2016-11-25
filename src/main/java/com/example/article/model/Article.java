@@ -17,17 +17,30 @@ public class Article {
     @Id
     @GeneratedValue
     private Long id;
+
+    /* 게시물 제목*/
     private String title;
+
+    /* 게시물 내용*/
     private String contents;
+
+    /* 게시물 태그*/
     @ManyToOne
     private Tag tag;
+
+    /* 게시물 댓글*/
     @ManyToOne
     private Comment comment;
+
+    /* 게시물 작성자*/
     private String author;
+
+    /* 게시물 비밀번호*/
     private String password;
+
+    /* 게시물 등록일시*/
     private Date created;
 
-    //기본 생성자 반드시 구현 되어있어야함
     protected Article(){}
 
     public Article(String title, String contents, String password, String author) {

@@ -9,6 +9,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -29,6 +31,7 @@ public class ArticleServiceTest {
     @Test
     public void 게시물생성하기(){
         //1. given
+        //@Before에서 조건 지정함
 
         //2. when
         List<Article> articles = articleService.findAll();

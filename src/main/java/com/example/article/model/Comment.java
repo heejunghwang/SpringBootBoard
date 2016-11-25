@@ -17,7 +17,11 @@ public class Comment {
     @Id
     @GeneratedValue
     private Long id;
+
+    /* 코멘트 내용*/
     private String content;
+
+    /* 코멘트 비밀번호*/
     private String password;
 
     public Comment(){}

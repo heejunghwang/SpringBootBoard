@@ -17,6 +17,8 @@ public class Tag {
     @Id
     @GeneratedValue
     private Long id;
+
+    /* 태그 제목*/
     private String title;
 
     public Tag(){}
@@ -24,4 +26,5 @@ public class Tag {
     public Tag(String title) {
         this.title = title;
     }
+
 }
