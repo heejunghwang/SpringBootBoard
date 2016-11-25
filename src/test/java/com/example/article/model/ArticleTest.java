@@ -3,8 +3,10 @@ package com.example.article.model;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.util.ReflectionTestUtils;
 
 /**
  * Created by hwang on 2016-11-19.
@@ -13,15 +15,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 public class ArticleTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setAuthorTest(){
-        try{
-            new Article("title", "contents", "pw", "22222222222222222222222222");
-        }catch(IllegalArgumentException e){
-            e.printStackTrace();
-            throw new IllegalArgumentException(e);
-        }
+        //1. given
+        Article article = new Article();
 
-        Assert.fail();
+        //2. when
+        ReflectionTestUtils.invokeMethod(article, "setAuthor", "author");
+
+        //3. then
+        Assert.assertEquals(article.getAuthor(), "author");
     }
 }
