@@ -9,8 +9,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ArticleDTO {
-    //private Long id;
+public class ArticleRequestDTO {
+    private Long id;
     private String title;
     private String content;
     private String password;

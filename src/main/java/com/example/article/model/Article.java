@@ -38,9 +38,8 @@ public class Article {
         this.created = new Date();
     }
 
-
     //Validation check for author
-    private void setAuthor(String author) {
+    void setAuthor(String author) {
         if(author.length() > 20){
             throw new IllegalArgumentException("사용자 이름은 20자 이상 사용할 수 없습니다");
         } else{
@@ -56,4 +55,5 @@ public class Article {
         this.author = author;
         this.password = password;
     }
+
 }

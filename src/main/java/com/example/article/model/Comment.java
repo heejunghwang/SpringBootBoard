@@ -18,12 +18,12 @@ public class Comment {
     @GeneratedValue
     private Long id;
     private String content;
-    private String pawssword;
+    private String password;
 
     public Comment(){}
 
-    public Comment(String content, String pawssword) {
+    public Comment(String content, String password) {
         this.content = content;
-        this.pawssword = pawssword;
+        this.password = password;
     }
 }
