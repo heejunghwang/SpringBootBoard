@@ -34,7 +34,7 @@ public class ArticleServiceTest {
         List<Article> articles = articleService.findAll();
 
         //3. then
-        Assert.assertEquals(articles.get(0).getTitle(), "title");
+        Assert.assertEquals(articles.get(0).getTitle(), "방가방가");
     }
 
     @Test
