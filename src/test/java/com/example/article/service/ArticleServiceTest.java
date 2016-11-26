@@ -72,7 +72,34 @@ public class ArticleServiceTest {
 
     @Test
     public void 게시물_페이징_보여주기(){
+        //1. given
+        Article a3 = articleService.create(new ArticleCreateDTO("방가방가3", "만나서 반가워요", "pw", "autor"));
+        Article a4 = articleService.create(new ArticleCreateDTO("안녕하세요4. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a5 = articleService.create(new ArticleCreateDTO("방가방가5", "만나서 반가워요", "pw", "autor"));
+        Article a6 = articleService.create(new ArticleCreateDTO("안녕하세요6. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a7 = articleService.create(new ArticleCreateDTO("방가방가7", "만나서 반가워요", "pw", "autor"));
+        Article a8 = articleService.create(new ArticleCreateDTO("안녕하세요8. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a9 = articleService.create(new ArticleCreateDTO("방가방가9", "만나서 반가워요", "pw", "autor"));
+        Article a10 = articleService.create(new ArticleCreateDTO("안녕하세요10. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a11 = articleService.create(new ArticleCreateDTO("방가방가11", "만나서 반가워요", "pw", "autor"));
+        Article a12 = articleService.create(new ArticleCreateDTO("안녕하세요12. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a13 = articleService.create(new ArticleCreateDTO("방가방가13", "만나서 반가워요", "pw", "autor"));
+        Article a14 = articleService.create(new ArticleCreateDTO("안녕하세요14. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
 
+        //2.when
+        Page<Article> articlePage = articleService.findAll(new PageRequest(0, 10));
+
+        //3.then
+        // 한 페이지 아이템 10개, 0번째 페이지 호출
+    }
+
+    @Test
+    public void 게시물_글번호_페이징_조회하기(){
+        //1.given
+
+        //2.when
+
+        //3.then
     }
 
     @Test

@@ -5,6 +5,8 @@ import com.example.article.dto.ArticleRequestDTO;
 import com.example.article.model.Article;
 import com.example.article.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -59,4 +61,15 @@ public class ArticleService {
         articleRepository.delete(articleRequestDTO.getId());
     }
 
+
+    /**
+     * 게시물 페이징 조회
+     * @param pageable
+     * @return
+     */
+    public Page<Article> findAll(Pageable pageable){
+        return articleRepository.findAll(pageable);
+    }
+
+//    public Page<Article> findAllById
 }
