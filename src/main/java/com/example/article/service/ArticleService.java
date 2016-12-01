@@ -71,5 +71,4 @@ public class ArticleService {
         return articleRepository.findAll(pageable);
     }
 
-//    public Page<Article> findAllById
 }

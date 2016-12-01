@@ -43,8 +43,8 @@ public class ArticleServiceTest {
     @Test
     public void 게시물_제목으로_조회하기(){
         //1. given
-        Article a1 = articleService.create(new ArticleCreateDTO("방가방가", "만나서 반가워요", "pw", "autor"));
-        Article a2 = articleService.create(new ArticleCreateDTO("안녕하세요. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a1 = articleService.create(new ArticleCreateDTO("It's awesome", "만나서 반가워요", "pw", "autor"));
+        Article a2 = articleService.create(new ArticleCreateDTO("방금 가입했어요~~", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
 
         //2. when
         List<Article> results = articleService.findByTitle(new ArticleRequestDTO(null,"title", null, null, null));
@@ -58,6 +58,7 @@ public class ArticleServiceTest {
         Article article = articleService.create(new ArticleCreateDTO("title", "content", "pw", "autor"));
 
         //2. when
+        //TODO : 비밀번호가 맞을 시에만 게시물 삭제 가능
         articleService.delete(new ArticleRequestDTO(Long.parseLong("1"), null, null, null, null));
 
         //삭제하는 로직 때문에 DTO가 변경되어야 하는 부분이 있을 수 있음
@@ -73,14 +74,14 @@ public class ArticleServiceTest {
     @Test
     public void 게시물_페이징_보여주기(){
         //1. given
-        Article a3 = articleService.create(new ArticleCreateDTO("방가방가3", "만나서 반가워요", "pw", "autor"));
-        Article a4 = articleService.create(new ArticleCreateDTO("안녕하세요4. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
-        Article a5 = articleService.create(new ArticleCreateDTO("방가방가5", "만나서 반가워요", "pw", "autor"));
-        Article a6 = articleService.create(new ArticleCreateDTO("안녕하세요6. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
-        Article a7 = articleService.create(new ArticleCreateDTO("방가방가7", "만나서 반가워요", "pw", "autor"));
-        Article a8 = articleService.create(new ArticleCreateDTO("안녕하세요8. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
-        Article a9 = articleService.create(new ArticleCreateDTO("방가방가9", "만나서 반가워요", "pw", "autor"));
-        Article a10 = articleService.create(new ArticleCreateDTO("안녕하세요10. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a3 = articleService.create(new ArticleCreateDTO("12월 입니다!", "만나서 반가워요", "pw", "autor"));
+        Article a4 = articleService.create(new ArticleCreateDTO("내년이 얼마 남지 않았네요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a5 = articleService.create(new ArticleCreateDTO("맥북 얼마인가요?", "만나서 반가워요", "pw", "autor"));
+        Article a6 = articleService.create(new ArticleCreateDTO("맥도날드 신메뉴를 먹어보았습니다", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a7 = articleService.create(new ArticleCreateDTO("내년에는 꼭 운동하고 싶어요", "만나서 반가워요", "pw", "autor"));
+        Article a8 = articleService.create(new ArticleCreateDTO("근처에 헬스장 괜찮은 곳 있나요?", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
+        Article a9 = articleService.create(new ArticleCreateDTO("★광고★", "만나서 반가워요", "pw", "autor"));
+        Article a10 = articleService.create(new ArticleCreateDTO("회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
         Article a11 = articleService.create(new ArticleCreateDTO("방가방가11", "만나서 반가워요", "pw", "autor"));
         Article a12 = articleService.create(new ArticleCreateDTO("안녕하세요12. 회원가입했어요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
         Article a13 = articleService.create(new ArticleCreateDTO("방가방가13", "만나서 반가워요", "pw", "autor"));
@@ -93,18 +94,8 @@ public class ArticleServiceTest {
         // 한 페이지 아이템 10개, 0번째 페이지 호출
     }
 
-    @Test
-    public void 게시물_글번호_페이징_조회하기(){
-        //1.given
+    //TODO : 게시물 조회를 한다.
 
-        //2.when
-
-        //3.then
-    }
-
-    @Test
-    public void 코멘트_저장하기(){
-
-    }
+    //TODO : 전체 글 갯수를 조회한다.
 
 }
