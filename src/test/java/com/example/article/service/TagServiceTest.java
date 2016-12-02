@@ -3,6 +3,7 @@ package com.example.article.service;
 import com.example.article.dto.TagCreateDTO;
 import com.example.article.model.Tag;
 import com.example.article.repository.TagRepository;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +18,7 @@ public class TagServiceTest {
     @Autowired
     TagService tagService;
 
+    @Test
     public void createTest(){
         tagService.create(new TagCreateDTO("태그"));
     }

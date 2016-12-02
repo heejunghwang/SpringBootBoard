@@ -15,5 +15,5 @@ public interface TagRepository extends JpaRepository<Tag, Long> {
      * 해당 게시물에 해당하는 태그 조회
      * @return
      */
-    List<Tag> findAll(String articleId);
+    List<Tag> findAll();
 }
