@@ -29,9 +29,11 @@ public class Article {
     private Tag tag;
 
     /* 게시물 댓글*/
+    //TODO : List
     @ManyToOne
     private Comment comment;
 
+    //TODO : author, password 등 반복적인 부분 처리
     /* 게시물 작성자*/
     private String author;
 

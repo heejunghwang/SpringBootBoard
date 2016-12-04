@@ -59,21 +59,19 @@ public class ArticleServiceTest {
 
         //2. when
         //TODO : 비밀번호가 맞을 시에만 게시물 삭제 가능
-        articleService.delete(new ArticleRequestDTO(Long.parseLong("1"), null, null, null, null));
-
-        //삭제하는 로직 때문에 DTO가 변경되어야 하는 부분이 있을 수 있음
-        //DTO를 새로 만드는게 나음
+        //TODO : DTO 분리하기
+        articleService.delete(new ArticleRequestDTO(1L, null, null, null, null));
 
         //3. then
         List<Article> articles = articleService.findAll();
         //Assert.assertEquals(articles.get(0).getTitle(), "title");
 
-        //TODO : delete 시 리턴값 확인하기
     }
 
     @Test
     public void 게시물_페이징_보여주기(){
         //1. given
+        //TODO : List로 구현하기
         Article a3 = articleService.create(new ArticleCreateDTO("12월 입니다!", "만나서 반가워요", "pw", "autor"));
         Article a4 = articleService.create(new ArticleCreateDTO("내년이 얼마 남지 않았네요", "안녕하세요. 회원가입했어요. 잘부탁드려요", "pw", "autor"));
         Article a5 = articleService.create(new ArticleCreateDTO("맥북 얼마인가요?", "만나서 반가워요", "pw", "autor"));
@@ -98,4 +96,6 @@ public class ArticleServiceTest {
 
     //TODO : 전체 글 갯수를 조회한다.
 
+
+    //TODO : @PostContruct 사용해서 샘플 데이터 넣기
 }
